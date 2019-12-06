@@ -15,7 +15,7 @@ const program = require("commander");
 const { exec } = require("child_process");
 
 program
-  .version("1.1.0")
+  .version("2.0.0")
   .description(
     chalk.yellow(figlet.textSync("Blocks cli", { horizontalLayout: "full" }))
   );
@@ -84,7 +84,7 @@ program
 
 program
   .command("css")
-  .alias("css")
+  .alias("cs")
   .description("Minifies css code")
   .action(() => {
     clear();
