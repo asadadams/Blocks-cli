@@ -1,5 +1,5 @@
 {
-  "name": "blocks-cli",
+  "name": "cli-blocks",
   "version": "0.0.1",
   "description": "Blocks command-line (CLI) tool for blocks framework",
   "main": "index.js",
