@@ -14,7 +14,7 @@ npm install blocksmvc-cli -g
 
 ## Usage
 
-- Change directory into project directory
+- Change directory into project directory and run a command
 
 `blks <command>`
 
@@ -29,6 +29,7 @@ npm install blocksmvc-cli -g
 | start    | Starts development server |
 | scripts  | Minifies js code          |
 | sass     | Runs sass compiler        |
+| css      | Minifies css code         |
 
 ## Contributing
 

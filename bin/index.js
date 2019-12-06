@@ -15,7 +15,7 @@ const program = require("commander");
 const { exec } = require("child_process");
 
 program
-  .version("1.0.0")
+  .version("1.1.0")
   .description(
     chalk.yellow(figlet.textSync("Blocks cli", { horizontalLayout: "full" }))
   );
@@ -75,6 +75,26 @@ program
       }
       if (stdout) {
         console.log(chalk.green(`[blocks] Compiling done ${stdout}`));
+      }
+      if (stderr) {
+        console.log(chalk.red(`[blocks] Shell Error: ${stderr}`));
+      }
+    });
+  });
+
+program
+  .command("css")
+  .alias("css")
+  .description("Minifies css code")
+  .action(() => {
+    clear();
+    console.log(chalk.blue("[blocks] Running css minifier"));
+    exec("gulp css", (err, stdout, stderr) => {
+      if (err) {
+        console.log(chalk.red(`[blocks] Error: ${err}`));
+      }
+      if (stdout) {
+        console.log(chalk.green(`[blocks] Minifing done ${stdout}`));
       }
       if (stderr) {
         console.log(chalk.red(`[blocks] Shell Error: ${stderr}`));
