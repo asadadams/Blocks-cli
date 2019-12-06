@@ -1,10 +1,10 @@
 {
-  "name": "cli-blocks",
-  "version": "0.0.1",
+  "name": "blocksmvc-cli",
+  "version": "1.0.0",
   "description": "Blocks command-line (CLI) tool for blocks framework",
-  "main": "index.js",
-  "preferGlobal": true,
+  "main": "./bin/index.js",
   "bin": {
+    "blks": "./bin/index.js",
     "blocks": "./bin/index.js"
   },
   "scripts": {
@@ -16,7 +16,8 @@
   },
   "keywords": [
     "PHP",
-    "Framework"
+    "Framework",
+    "cli"
   ],
   "author": "Asad Adams",
   "license": "MIT",

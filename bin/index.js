@@ -15,7 +15,7 @@ const program = require("commander");
 const { exec } = require("child_process");
 
 program
-  .version("0.0.1")
+  .version("1.0.0")
   .description(
     chalk.yellow(figlet.textSync("Blocks cli", { horizontalLayout: "full" }))
   );
@@ -31,7 +31,14 @@ program
       if (err) {
         console.log(chalk.red(`[blocks] Error: ${err}`));
       }
-      console.log(chalk.green("[blocks] Development server started"));
+      if (stdout) {
+        console.log(
+          chalk.green(`[blocks] Development server started ${stdout}`)
+        );
+      }
+      if (stderr) {
+        console.log(chalk.red(`[blocks] Shell Error: ${stderr}`));
+      }
     });
   });
 
@@ -46,7 +53,12 @@ program
       if (err) {
         console.log(chalk.red(`[blocks] Error: ${err}`));
       }
-      console.log(chalk.green("[blocks] Minifing done"));
+      if (stdout) {
+        console.log(chalk.green(`[blocks] Minifing done ${stdout}`));
+      }
+      if (stderr) {
+        console.log(chalk.red(`[blocks] Shell Error: ${stderr}`));
+      }
     });
   });
 
@@ -61,7 +73,12 @@ program
       if (err) {
         console.log(chalk.red(`[blocks] Error: ${err}`));
       }
-      console.log(chalk.green("[blocks] Compiling done"));
+      if (stdout) {
+        console.log(chalk.green(`[blocks] Compiling done ${stdout}`));
+      }
+      if (stderr) {
+        console.log(chalk.red(`[blocks] Shell Error: ${stderr}`));
+      }
     });
   });
 

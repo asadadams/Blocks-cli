@@ -6,7 +6,23 @@
 
 This is a command line (CLI) tool for interacting with Blocks Framework
 
-### Commands
+## Installation
+
+```
+npm install blocksmvc-cli -g
+```
+
+## Usage
+
+- Change directory into project directory
+
+`blks <command>`
+
+**OR**
+
+`blocks <command>`
+
+## Commands
 
 | Commands | Description               |
 | -------- | ------------------------- |
