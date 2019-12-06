@@ -1,0 +1,39 @@
+{
+  "name": "blocks-cli",
+  "version": "0.0.1",
+  "description": "Blocks command-line (CLI) tool for blocks framework",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "blocks": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asadadams/BlocksMVC.git"
+  },
+  "keywords": [
+    "PHP",
+    "Framework"
+  ],
+  "author": "Asad Adams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asadadams/BlocksMVC/issues"
+  },
+  "homepage": "https://github.com/asadadams/BlocksMVC#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "chalk": "^3.0.0",
+    "clear": "^0.1.0",
+    "commander": "^4.0.1",
+    "figlet": "^1.2.4",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
