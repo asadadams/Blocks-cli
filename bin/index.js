@@ -93,7 +93,11 @@ program
   .action(() => {
     //clear();
     if (process.argv.length === 3) {
-      console.error(chalk.red("Pass in an option"));
+      console.error(
+        chalk.red(
+          "Pass in an option --controller(-c) for controller OR --model(-m) for model"
+        )
+      );
       process.exit(1);
     }
     switch (process.argv[3]) {
