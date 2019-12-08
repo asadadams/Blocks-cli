@@ -9,18 +9,18 @@ This is a command line (CLI) tool for interacting with Blocks Framework
 ## Installation
 
 ```
-npm install blocksmvc-cli -g
+npm install blocksmvc-cli
 ```
 
 ## Usage
 
 - Change directory into project directory and run a command
 
-`blks <command>`
+`npx blks <command>`
 
 **OR**
 
-`blocks <command>`
+`npx blocks <command>`
 
 ## Commands
 
@@ -30,6 +30,7 @@ npm install blocksmvc-cli -g
 | scripts  | Minifies js code          |
 | sass     | Runs sass compiler        |
 | css      | Minifies css code         |
+| make     | Creating files            |
 
 ## Contributing
 
