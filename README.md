@@ -31,8 +31,11 @@ npm install blocksmvc-cli
 | sass                             | Runs sass compiler        |
 | css                              | Minifies css code         |
 | dump-autoload                    | Autoloads classes         |
-| make --controller controllerName | Creatiing a controller    |
-| make --model modelName           | Creatiing a model         |
+| make --controller controllerName | Creating a controller     |
+| make --model modelName           | Creating a model          |
+| make --migration MigrationName   | Creating migration        |
+| migrate                          | Making migrations         |
+| make --rollback                  | Rolling back migrations   |
 
 ## Contributing
 

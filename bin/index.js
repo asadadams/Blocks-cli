@@ -48,7 +48,7 @@ function dumpAutoLoad() {
 }
 
 program
-  .version("2.3.1")
+  .version("2.4.0")
   .description(
     chalk.yellow(figlet.textSync("Blocks cli", { horizontalLayout: "full" }))
   );
@@ -112,12 +112,13 @@ program
   .description("Creating files")
   .option("-c, --controller <name>", "Controller name is required")
   .option("-m, --model <name>", "Model name is required")
+  .option("-mig, --migration <name>", "Migration name is required")
   .action(() => {
     //clear();
     if (process.argv.length === 3) {
       console.error(
         chalk.red(
-          "Pass in an option --controller(-c) for controller OR --model(-m) for model"
+          "Pass in an option --controller(-c) for Controller OR --model(-m) for Model OR --migration(-mig) for Migration"
         )
       );
       process.exit(1);
@@ -161,6 +162,46 @@ program
           dumpAutoLoad()
         );
         break;
+      case "--migration":
+        console.log(logSymbols.info, chalk.blue("[blocks] Creating Migration"));
+        execute(
+          `vendor\\bin\\phinx.bat create ${process.argv[4]} -c setup/migration.php`,
+          "Created migration"
+        );
+        break;
+      case "--mig":
+        console.log(logSymbols.info, chalk.blue("[blocks] Creating Migration"));
+        execute(
+          `vendor\\bin\\phinx.bat create ${process.argv[4]} -c setup/migration.php`,
+          "Created migration"
+        );
+        break;
+    }
+  });
+
+program
+  .command("migrate")
+  .description("Migration operations")
+  .option("-r, --rollback")
+  .action(() => {
+    clear();
+    console.log(process.argv);
+    if (process.argv[3] !== undefined) {
+      //Rollback
+      console.log(
+        logSymbols.info,
+        chalk.blue("[blocks] Rolling back migration")
+      );
+      execute(
+        `vendor\\bin\\phinx.bat rollback -e dev -c setup/migration.php`,
+        "Migration done"
+      );
+    } else {
+      console.log(logSymbols.info, chalk.blue("[blocks] Migrating"));
+      execute(
+        `vendor\\bin\\phinx.bat migrate -e dev -c setup/migration.php`,
+        "Migration done"
+      );
     }
   });
 

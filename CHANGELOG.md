@@ -1,5 +1,15 @@
 ## Change log
 
+## [2.4.0] - 9-12-2019
+
+### Changed
+
+- Documentation changed
+
+### Added
+
+- Added migration commands
+
 ## [2.3.1] - 9-12-2019
 
 ### Changed
