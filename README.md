@@ -24,13 +24,15 @@ npm install blocksmvc-cli
 
 ## Commands
 
-| Commands | Description               |
-| -------- | ------------------------- |
-| start    | Starts development server |
-| scripts  | Minifies js code          |
-| sass     | Runs sass compiler        |
-| css      | Minifies css code         |
-| make     | Creating files            |
+| Commands                         | Description               |
+| -------------------------------- | ------------------------- |
+| start                            | Starts development server |
+| scripts                          | Minifies js code          |
+| sass                             | Runs sass compiler        |
+| css                              | Minifies css code         |
+| dump-autoload                    | Autoloads classes         |
+| make --controller controllerName | Creatiing a controller    |
+| make --model modelName           | Creatiing a model         |
 
 ## Contributing
 

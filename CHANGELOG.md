@@ -1,6 +1,6 @@
 ## Change log
 
-## [2.3.0] - 8-12-2019
+## [2.3.1] - 9-12-2019
 
 ### Changed
 
@@ -9,7 +9,8 @@
 
 ### Added
 
-- Added a make command, for creating of files
+- Added make command, for creating of files
+- Added dump autoload command, for autoloading
 - Added log icons
 
 ### Fixed

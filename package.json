@@ -1,6 +1,6 @@
 {
   "name": "blocksmvc-cli",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Blocks command-line (CLI) tool for blocks framework",
   "main": "./bin/index.js",
   "bin": {

@@ -15,28 +15,40 @@ const program = require("commander");
 const logSymbols = require("log-symbols");
 const { exec } = require("child_process");
 
-function execute(command, successOutput) {
+function execute(command, successOutput, callback) {
   exec(command, (err, stdout, stderr) => {
     if (err) {
       console.log(logSymbols.error, chalk.red(`[blocks] ${err}`));
+    } else {
+      console.log(
+        logSymbols.success,
+        chalk.green(`[blocks] ${successOutput} ${stdout}`)
+      );
+      if (callback && typeof callback === "function") {
+        callback();
+      }
     }
     if (stdout) {
       console.log(
         logSymbols.success,
         chalk.green(`[blocks] ${successOutput} ${stdout}`)
       );
+      if (callback && typeof callback === "function") {
+        callback();
+      }
     }
     if (stderr) {
-      console.log(
-        logSymbols.error,
-        chalk.red(`[blocks] Shell Error: ${stderr}`)
-      );
+      console.log(logSymbols.info, chalk.blue(`[blocks] ${stderr}`));
     }
   });
 }
 
+function dumpAutoLoad() {
+  execute("composer dump-autoload -o", "Done autoloading");
+}
+
 program
-  .version("2.3.0")
+  .version("2.3.1")
   .description(
     chalk.yellow(figlet.textSync("Blocks cli", { horizontalLayout: "full" }))
   );
@@ -85,6 +97,16 @@ program
   });
 
 program
+  .command("dump-autoload")
+  .alias("autoload")
+  .description("Autoloads classes")
+  .action(() => {
+    clear();
+    console.log(logSymbols.info, chalk.blue("[blocks] Autoloading"));
+    dumpAutoLoad();
+  });
+
+program
   .command("make")
   .alias("mk")
   .description("Creating files")
@@ -105,14 +127,16 @@ program
         console.log(logSymbols.info, chalk.blue("[blocks] Creating model"));
         execute(
           `node ./bin/scripts/createModel.js ${process.argv[4]}`,
-          "Model created"
+          "Model created",
+          dumpAutoLoad()
         );
         break;
       case "-m":
         console.log(logSymbols.info, chalk.blue("[blocks] Creating model"));
         execute(
           `node ./bin/scripts/createModel.js ${process.argv[4]}`,
-          "Model created"
+          "Model created",
+          dumpAutoLoad()
         );
         break;
       case "--controller":
@@ -122,7 +146,8 @@ program
         );
         execute(
           `node ./bin/scripts/createController.js ${process.argv[4]}`,
-          "Controller created"
+          "Controller created",
+          dumpAutoLoad()
         );
         break;
       case "-c":
@@ -132,7 +157,8 @@ program
         );
         execute(
           `node ./bin/scripts/createController.js ${process.argv[4]}`,
-          "Controller created"
+          "Controller created",
+          dumpAutoLoad()
         );
         break;
     }
