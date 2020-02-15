@@ -35,7 +35,7 @@ npm install blocksmvc-cli
 | make --model modelName           | Creating a model          |
 | make --migration MigrationName   | Creating migration        |
 | migrate                          | Making migrations         |
-| make --rollback                  | Rolling back migrations   |
+| migrate --rollback               | Rolling back migrations   |
 
 ## Contributing
 

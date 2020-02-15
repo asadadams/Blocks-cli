@@ -1,5 +1,11 @@
 ## Change log
 
+## [2.4.0] - 15-02-2020
+
+### Fixed
+
+- Documentation typo fixed
+
 ## [2.4.0] - 9-12-2019
 
 ### Changed
